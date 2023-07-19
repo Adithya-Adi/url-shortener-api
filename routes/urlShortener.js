@@ -18,7 +18,7 @@ router.post('/shorten', async (req, res) => {
 
     const domain = req.hostname; //  req.get('host')
     const port = process.env.PORT || 3000;
-    const shortUrl = `http://${domain}:${port}/${shortCode}`;
+    const shortUrl = `http://${domain}/${shortCode}`;
     res.json({ shortUrl });
   } catch (error) {
     console.error('Error saving to PostgreSQL:', error);
